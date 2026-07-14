@@ -4,13 +4,13 @@ import { getFirestore } from 'firebase/firestore';
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyCLCRJJPEVpsZHmG7C2e0SOgdNe6DfGIcU",
-  authDomain: "astro-multistore.firebaseapp.com",
-  projectId: "astro-multistore",
-  storageBucket: "astro-multistore.firebasestorage.app",
-  messagingSenderId: "439353700473",
-  appId: "1:439353700473:web:2cfdac9680271dd21124a8",
-  measurementId: "G-MNPSGV91YF"
+  apiKey: import.meta.env.PUBLIC_FIREBASE_API_KEY,
+  authDomain: import.meta.env.PUBLIC_FIREBASE_AUTH_DOMAIN,
+  projectId: import.meta.env.PUBLIC_FIREBASE_PROJECT_ID,
+  storageBucket: import.meta.env.PUBLIC_FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: import.meta.env.PUBLIC_FIREBASE_MESSAGING_SENDER_ID,
+  appId: import.meta.env.PUBLIC_FIREBASE_APP_ID,
+  measurementId: import.meta.env.PUBLIC_FIREBASE_MEASUREMENT_ID
 };
 
 // Flag to indicate Firebase is configured
