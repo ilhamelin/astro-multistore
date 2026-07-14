@@ -1,0 +1,120 @@
+[debug] [2026-07-13T04:27:32.763Z] ----------------------------------------------------------------------
+[debug] [2026-07-13T04:27:32.765Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\benja\AppData\Local\npm-cache\_npx\ba4f1959e38407b5\node_modules\firebase-tools\lib\bin\firebase.js init dataconnect --project astro-multistore
+[debug] [2026-07-13T04:27:32.766Z] CLI Version:   15.23.0
+[debug] [2026-07-13T04:27:32.766Z] Platform:      win32
+[debug] [2026-07-13T04:27:32.766Z] Node Version:  v26.4.0
+[debug] [2026-07-13T04:27:32.766Z] Detected Agent: unknown
+[debug] [2026-07-13T04:27:32.766Z] Time:          Mon Jul 13 2026 00:27:32 GMT-0400 (hora estándar de Chile)
+[debug] [2026-07-13T04:27:32.766Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2026-07-13T04:27:32.783Z] >>> [apiv2][query] GET https://firebase-public.firebaseio.com/cli.json [none]
+[info] 
+     ######## #### ########  ######## ########     ###     ######  ########
+     ##        ##  ##     ## ##       ##     ##  ##   ##  ##       ##
+     ######    ##  ########  ######   ########  #########  ######  ######
+     ##        ##  ##    ##  ##       ##     ## ##     ##       ## ##
+     ##       #### ##     ## ######## ########  ##     ##  ######  ########
+
+You're about to initialize a Firebase project in this directory:
+
+  C:\Users\benja\.gemini\antigravity-ide\scratch\astro-multistore
+
+[debug] [2026-07-13T04:27:40.042Z] <<< [apiv2][status] GET https://firebase-public.firebaseio.com/cli.json 200
+[debug] [2026-07-13T04:27:40.042Z] <<< [apiv2][body] GET https://firebase-public.firebaseio.com/cli.json {"cloudBuildErrorAfter":1594252800000,"cloudBuildWarnAfter":1590019200000,"defaultNode10After":1594252800000,"minVersion":"3.0.5","node8DeploysDisabledAfter":1613390400000,"node8RuntimeDisabledAfter":1615809600000,"node8WarnAfter":1600128000000}
+[info] 
+=== Project Setup
+[info] 
+[info] First, let's associate this project directory with a Firebase project.
+[info] You can create multiple project aliases by running firebase use --add, 
+[info] 
+[debug] [2026-07-13T04:28:01.628Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2026-07-13T04:28:01.628Z] > authorizing via signed-in user (benjaigancioreyes56@gmail.com)
+[debug] [2026-07-13T04:28:01.631Z] Checked if tokens are valid: true, expires at: 1783920359867
+[debug] [2026-07-13T04:28:01.631Z] Checked if tokens are valid: true, expires at: 1783920359867
+[debug] [2026-07-13T04:28:01.632Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/astro-multistore [none]
+[debug] [2026-07-13T04:28:01.961Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/astro-multistore 200
+[debug] [2026-07-13T04:28:01.961Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/astro-multistore {"projectId":"astro-multistore","projectNumber":"439353700473","displayName":"astro-multistore","name":"projects/astro-multistore","resources":{"hostingSite":"astro-multistore"},"state":"ACTIVE","labels":{"firebase":"enabled"},"etag":"1_1420ff3c-363f-4017-954a-08f010a130e1"}
+[info] i  Using project astro-multistore (astro-multistore) . 
+[info] 
+=== Dataconnect Setup
+[info] i  dataconnect: ensuring required API firebasedataconnect.googleapis.com is enabled... 
+[debug] [2026-07-13T04:28:01.979Z] Checked if tokens are valid: true, expires at: 1783920359867
+[debug] [2026-07-13T04:28:01.980Z] Checked if tokens are valid: true, expires at: 1783920359867
+[info] i  dataconnect: ensuring required API sqladmin.googleapis.com is enabled... 
+[debug] [2026-07-13T04:28:01.983Z] Checked if tokens are valid: true, expires at: 1783920359867
+[debug] [2026-07-13T04:28:01.983Z] Checked if tokens are valid: true, expires at: 1783920359867
+[debug] [2026-07-13T04:28:01.983Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/astro-multistore/services/firebasedataconnect.googleapis.com [none]
+[debug] [2026-07-13T04:28:01.983Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/astro-multistore/services/firebasedataconnect.googleapis.com  x-goog-user-project=astro-multistore
+[debug] [2026-07-13T04:28:01.985Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/astro-multistore/services/sqladmin.googleapis.com [none]
+[debug] [2026-07-13T04:28:01.985Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/astro-multistore/services/sqladmin.googleapis.com  x-goog-user-project=astro-multistore
+[debug] [2026-07-13T04:28:03.170Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/astro-multistore/services/firebasedataconnect.googleapis.com 200
+[debug] [2026-07-13T04:28:03.170Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/astro-multistore/services/firebasedataconnect.googleapis.com [omitted]
+[warn] !  dataconnect: missing required API firebasedataconnect.googleapis.com. Enabling now... 
+[debug] [2026-07-13T04:28:03.171Z] Checked if tokens are valid: true, expires at: 1783920359867
+[debug] [2026-07-13T04:28:03.171Z] Checked if tokens are valid: true, expires at: 1783920359867
+[debug] [2026-07-13T04:28:03.172Z] >>> [apiv2][query] POST https://serviceusage.googleapis.com/v1/projects/astro-multistore/services/firebasedataconnect.googleapis.com:enable [none]
+[debug] [2026-07-13T04:28:03.172Z] >>> [apiv2][(partial)header] POST https://serviceusage.googleapis.com/v1/projects/astro-multistore/services/firebasedataconnect.googleapis.com:enable  x-goog-user-project=astro-multistore
+[debug] [2026-07-13T04:28:03.174Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/astro-multistore/services/sqladmin.googleapis.com 200
+[debug] [2026-07-13T04:28:03.174Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/astro-multistore/services/sqladmin.googleapis.com [omitted]
+[warn] !  dataconnect: missing required API sqladmin.googleapis.com. Enabling now... 
+[debug] [2026-07-13T04:28:03.175Z] Checked if tokens are valid: true, expires at: 1783920359867
+[debug] [2026-07-13T04:28:03.175Z] Checked if tokens are valid: true, expires at: 1783920359867
+[debug] [2026-07-13T04:28:03.175Z] >>> [apiv2][query] POST https://serviceusage.googleapis.com/v1/projects/astro-multistore/services/sqladmin.googleapis.com:enable [none]
+[debug] [2026-07-13T04:28:03.175Z] >>> [apiv2][(partial)header] POST https://serviceusage.googleapis.com/v1/projects/astro-multistore/services/sqladmin.googleapis.com:enable  x-goog-user-project=astro-multistore
+[debug] [2026-07-13T04:28:03.970Z] <<< [apiv2][status] POST https://serviceusage.googleapis.com/v1/projects/astro-multistore/services/sqladmin.googleapis.com:enable 200
+[debug] [2026-07-13T04:28:03.970Z] <<< [apiv2][body] POST https://serviceusage.googleapis.com/v1/projects/astro-multistore/services/sqladmin.googleapis.com:enable [omitted]
+[debug] [2026-07-13T04:28:04.805Z] <<< [apiv2][status] POST https://serviceusage.googleapis.com/v1/projects/astro-multistore/services/firebasedataconnect.googleapis.com:enable 200
+[debug] [2026-07-13T04:28:04.805Z] <<< [apiv2][body] POST https://serviceusage.googleapis.com/v1/projects/astro-multistore/services/firebasedataconnect.googleapis.com:enable [omitted]
+[debug] [2026-07-13T04:28:14.833Z] Checked if tokens are valid: true, expires at: 1783920359867
+[debug] [2026-07-13T04:28:14.834Z] Checked if tokens are valid: true, expires at: 1783920359867
+[debug] [2026-07-13T04:28:14.835Z] >>> [apiv2][query] GET https://firebasedataconnect.googleapis.com/v1/projects/astro-multistore/locations/-/services [none]
+[debug] [2026-07-13T04:28:16.022Z] <<< [apiv2][status] GET https://firebasedataconnect.googleapis.com/v1/projects/astro-multistore/locations/-/services 200
+[debug] [2026-07-13T04:28:16.022Z] <<< [apiv2][body] GET https://firebasedataconnect.googleapis.com/v1/projects/astro-multistore/locations/-/services {}
+[info] i  Learn more about Gemini in Firebase and how it uses your data: https://firebase.google.com/docs/gemini-in-firebase#how-gemini-in-firebase-uses-your-data 
+[debug] [2026-07-13T04:35:16.354Z] Checked if tokens are valid: true, expires at: 1783920359867
+[debug] [2026-07-13T04:35:16.361Z] Checked if tokens are valid: true, expires at: 1783920359867
+[debug] [2026-07-13T04:35:16.362Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/astro-multistore/services/cloudbilling.googleapis.com [none]
+[debug] [2026-07-13T04:35:16.362Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/astro-multistore/services/cloudbilling.googleapis.com  x-goog-user-project=astro-multistore
+[debug] [2026-07-13T04:35:17.626Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/astro-multistore/services/cloudbilling.googleapis.com 200
+[debug] [2026-07-13T04:35:17.626Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/astro-multistore/services/cloudbilling.googleapis.com [omitted]
+[debug] [2026-07-13T04:35:17.626Z] Checked if tokens are valid: true, expires at: 1783920359867
+[debug] [2026-07-13T04:35:17.627Z] Checked if tokens are valid: true, expires at: 1783920359867
+[debug] [2026-07-13T04:35:17.627Z] >>> [apiv2][query] POST https://serviceusage.googleapis.com/v1/projects/astro-multistore/services/cloudbilling.googleapis.com:enable [none]
+[debug] [2026-07-13T04:35:17.627Z] >>> [apiv2][(partial)header] POST https://serviceusage.googleapis.com/v1/projects/astro-multistore/services/cloudbilling.googleapis.com:enable  x-goog-user-project=astro-multistore
+[debug] [2026-07-13T04:35:18.540Z] <<< [apiv2][status] POST https://serviceusage.googleapis.com/v1/projects/astro-multistore/services/cloudbilling.googleapis.com:enable 200
+[debug] [2026-07-13T04:35:18.541Z] <<< [apiv2][body] POST https://serviceusage.googleapis.com/v1/projects/astro-multistore/services/cloudbilling.googleapis.com:enable [omitted]
+[debug] [2026-07-13T04:35:28.569Z] Checked if tokens are valid: true, expires at: 1783920359867
+[debug] [2026-07-13T04:35:28.570Z] Checked if tokens are valid: true, expires at: 1783920359867
+[debug] [2026-07-13T04:35:28.570Z] >>> [apiv2][query] GET https://cloudbilling.googleapis.com/v1/projects/astro-multistore/billingInfo [none]
+[debug] [2026-07-13T04:35:28.570Z] >>> [apiv2][(partial)header] GET https://cloudbilling.googleapis.com/v1/projects/astro-multistore/billingInfo  x-goog-user-project=astro-multistore
+[debug] [2026-07-13T04:35:29.552Z] <<< [apiv2][status] GET https://cloudbilling.googleapis.com/v1/projects/astro-multistore/billingInfo 200
+[debug] [2026-07-13T04:35:29.552Z] <<< [apiv2][body] GET https://cloudbilling.googleapis.com/v1/projects/astro-multistore/billingInfo {"name":"projects/astro-multistore/billingInfo","projectId":"astro-multistore","billingAccountName":"","billingEnabled":false}
+[debug] [2026-07-13T04:35:29.556Z] Checked if tokens are valid: true, expires at: 1783920359867
+[debug] [2026-07-13T04:35:29.556Z] Checked if tokens are valid: true, expires at: 1783920359867
+[debug] [2026-07-13T04:35:29.560Z] >>> [apiv2][query] GET https://monitoring.googleapis.com/v3/projects/astro-multistore/timeSeries/ filter=metric.type%3D%22serviceruntime.googleapis.com%2Fquota%2Fallocation%2Fusage%22+AND+metric.label.quota_metric+%3D+%22sqladmin.googleapis.com%2Ffdc_lifetime_free_trial_per_project%22&interval.endTime=2026-07-13T04%3A35%3A29.555Z&interval.startTime=2026-07-06T04%3A35%3A29.554Z
+[debug] [2026-07-13T04:35:30.324Z] <<< [apiv2][status] GET https://monitoring.googleapis.com/v3/projects/astro-multistore/timeSeries/ 200
+[debug] [2026-07-13T04:35:30.325Z] <<< [apiv2][body] GET https://monitoring.googleapis.com/v3/projects/astro-multistore/timeSeries/ {"unit":"1"}
+[info] +  dataconnect: CloudSQL no cost trial available! 
+[debug] [2026-07-13T04:35:30.378Z] Checked if tokens are valid: true, expires at: 1783920359867
+[debug] [2026-07-13T04:35:30.378Z] Checked if tokens are valid: true, expires at: 1783920359867
+[debug] [2026-07-13T04:35:30.378Z] >>> [apiv2][query] GET https://sqladmin.googleapis.com/v1/projects/astro-multistore/instances [none]
+[debug] [2026-07-13T04:35:31.032Z] <<< [apiv2][status] GET https://sqladmin.googleapis.com/v1/projects/astro-multistore/instances 200
+[debug] [2026-07-13T04:35:31.032Z] <<< [apiv2][body] GET https://sqladmin.googleapis.com/v1/projects/astro-multistore/instances {}
+[debug] [2026-07-13T04:35:31.034Z] Checked if tokens are valid: true, expires at: 1783920359867
+[debug] [2026-07-13T04:35:31.034Z] Checked if tokens are valid: true, expires at: 1783920359867
+[debug] [2026-07-13T04:35:31.034Z] >>> [apiv2][query] GET https://firebasedataconnect.googleapis.com/v1/projects/astro-multistore/locations [none]
+[debug] [2026-07-13T04:35:32.088Z] <<< [apiv2][status] GET https://firebasedataconnect.googleapis.com/v1/projects/astro-multistore/locations 200
+[debug] [2026-07-13T04:35:32.088Z] <<< [apiv2][body] GET https://firebasedataconnect.googleapis.com/v1/projects/astro-multistore/locations {"locations":[{"name":"projects/astro-multistore/locations/asia-east1","locationId":"asia-east1","displayName":"Taiwan"},{"name":"projects/astro-multistore/locations/asia-east2","locationId":"asia-east2","displayName":"Hong Kong"},{"name":"projects/astro-multistore/locations/asia-northeast1","locationId":"asia-northeast1","displayName":"Tokyo"},{"name":"projects/astro-multistore/locations/asia-northeast2","locationId":"asia-northeast2","displayName":"Osaka"},{"name":"projects/astro-multistore/locations/asia-northeast3","locationId":"asia-northeast3","displayName":"Seoul"},{"name":"projects/astro-multistore/locations/asia-south1","locationId":"asia-south1","displayName":"Mumbai"},{"name":"projects/astro-multistore/locations/asia-southeast1","locationId":"asia-southeast1","displayName":"Singapore"},{"name":"projects/astro-multistore/locations/asia-southeast2","locationId":"asia-southeast2","displayName":"Jakarta"},{"name":"projects/astro-multistore/locations/australia-southeast1","locationId":"australia-southeast1","displayName":"Sydney"},{"name":"projects/astro-multistore/locations/australia-southeast2","locationId":"australia-southeast2","displayName":"Melbourne"},{"name":"projects/astro-multistore/locations/europe-central2","locationId":"europe-central2","displayName":"Warsaw"},{"name":"projects/astro-multistore/locations/europe-north1","locationId":"europe-north1","displayName":"Finland"},{"name":"projects/astro-multistore/locations/europe-southwest1","locationId":"europe-southwest1","displayName":"Madrid"},{"name":"projects/astro-multistore/locations/europe-west1","locationId":"europe-west1","displayName":"Belgium"},{"name":"projects/astro-multistore/locations/europe-west2","locationId":"europe-west2","displayName":"London"},{"name":"projects/astro-multistore/locations/europe-west3","locationId":"europe-west3","displayName":"Frankfurt"},{"name":"projects/astro-multistore/locations/europe-west4","locationId":"europe-west4","displayName":"Netherlands"},{"name":"projects/astro-multistore/locations/europe-west6","locationId":"europe-west6","displayName":"Zurich"},{"name":"projects/astro-multistore/locations/europe-west8","locationId":"europe-west8","displayName":"Milan"},{"name":"projects/astro-multistore/locations/europe-west9","locationId":"europe-west9","displayName":"Paris"},{"name":"projects/astro-multistore/locations/me-west1","locationId":"me-west1","displayName":"Tel Aviv"},{"name":"projects/astro-multistore/locations/northamerica-northeast1","locationId":"northamerica-northeast1","displayName":"Montréal"},{"name":"projects/astro-multistore/locations/northamerica-northeast2","locationId":"northamerica-northeast2","displayName":"Toronto"},{"name":"projects/astro-multistore/locations/southamerica-east1","locationId":"southamerica-east1","displayName":"São Paulo"},{"name":"projects/astro-multistore/locations/southamerica-west1","locationId":"southamerica-west1","displayName":"Santiago"},{"name":"projects/astro-multistore/locations/us-central1","locationId":"us-central1","displayName":"Iowa"},{"name":"projects/astro-multistore/locations/us-east1","locationId":"us-east1","displayName":"South Carolina"},{"name":"projects/astro-multistore/locations/us-east4","locationId":"us-east4","displayName":"Northern Virginia"},{"name":"projects/astro-multistore/locations/us-south1","locationId":"us-south1","displayName":"Dallas"},{"name":"projects/astro-multistore/locations/us-west1","locationId":"us-west1","displayName":"Oregon"},{"name":"projects/astro-multistore/locations/us-west2","locationId":"us-west2","displayName":"Los Angeles"},{"name":"projects/astro-multistore/locations/us-west3","locationId":"us-west3","displayName":"Salt Lake City"},{"name":"projects/astro-multistore/locations/us-west4","locationId":"us-west4","displayName":"Las Vegas"}]}
+[debug] [2026-07-13T04:35:51.332Z] ExitPromptError: User force closed the prompt with SIGINT
+    at Interface.sigint (C:\Users\benja\AppData\Local\npm-cache\_npx\ba4f1959e38407b5\node_modules\@inquirer\core\dist\commonjs\lib\create-prompt.js:101:37)
+    at Interface.emit (node:events:509:20)
+    at [_ttyWrite] [as _ttyWrite] (node:internal/readline/interface:1327:18)
+    at ReadStream.onkeypress (node:internal/readline/interface:284:20)
+    at ReadStream.emit (node:events:521:24)
+    at emitKeys (node:internal/readline/utils:371:14)
+    at emitKeys.next (<anonymous>)
+    at ReadStream.onData (node:internal/readline/emitKeypressEvents:64:36)
+    at ReadStream.emit (node:events:509:20)
+    at addChunk (node:internal/streams/readable:568:12)
+[error] 
+[error] Error: An unexpected error has occurred.

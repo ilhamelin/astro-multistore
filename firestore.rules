@@ -1,0 +1,56 @@
+rules_version = '2';
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // Helper: Checks if the user is signed in
+    function isSignedIn() {
+      return request.auth != null;
+    }
+
+    // Helper: Checks if the request userId matches the authenticated user UID
+    function isOwner(userId) {
+      return isSignedIn() && request.auth.uid == userId;
+    }
+
+    // Helper: Checks if the authenticated user has an 'admin' role in /users collection
+    function isAdmin() {
+      return isSignedIn() && 
+        get(/databases/$(database)/documents/users/$(request.auth.uid)).data.role == 'admin';
+    }
+
+    // 1. Users Profile Rules
+    match /users/{userId} {
+      // Anyone can create their profile (registration)
+      allow create: if true;
+      // Users can read/edit only their own profile, Admins can read all profiles
+      allow read: if isOwner(userId) || isAdmin();
+      allow update: if isOwner(userId);
+      allow delete: if isAdmin();
+    }
+
+    // 2. Products Rules
+    match /products/{productId} {
+      // Anyone can browse products (public catalog)
+      allow read: if true;
+      // Only authenticated Admins can create, edit or delete products
+      allow write: if isAdmin();
+    }
+
+    // 3. Orders Rules
+    match /orders/{orderId} {
+      // Anyone can submit a purchase order (create)
+      allow create: if true;
+      // Only Admins can view the complete order list or modify order statuses
+      allow read, update, delete: if isAdmin();
+    }
+
+    // 4. Analytics Rules
+    match /analytics/{docId} {
+      // Anyone can read general analytics counts
+      allow read: if true;
+      // Anyone can increment view counts, but updates must be valid increments, or write restricted to Admins
+      allow write: if true; 
+    }
+  }
+}

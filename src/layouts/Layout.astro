@@ -1,0 +1,115 @@
+---
+import "../styles/global.css";
+
+interface Props {
+	title?: string;
+	description?: string;
+}
+
+const {
+	title = "FlexCommerce - Tu Tienda a la Medida",
+	description = "La plataforma de comercio electrónico inteligente adaptada a tus necesidades y nichos preferidos.",
+} = Astro.props;
+---
+
+<!doctype html>
+<html lang="es">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="description" content={description} />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="generator" content={Astro.generator} />
+		<title>{title}</title>
+
+		<!-- Preconnect and Load Premium Fonts -->
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;550;600;700;800;900&family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400&family=Space+Grotesk:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700;800;900&family=Quicksand:wght@400;500;600;700&display=swap"
+			rel="stylesheet"
+		/>
+
+		<!-- Custom Tailwind utility overrides and font mapping -->
+		<style is:global>
+			/* Bind font names to Tailwind categories */
+			.font-sans {
+				font-family:
+					"Inter",
+					system-ui,
+					-apple-system,
+					sans-serif;
+			}
+			.font-serif {
+				font-family: "Playfair+Display", "Georgia", serif;
+			}
+			.font-mono {
+				font-family: "Space Grotesk", "Courier New", monospace;
+			}
+
+			/* Utility to hide scrollbars while preserving scrolling */
+			.scrollbar-none::-webkit-scrollbar {
+				display: none;
+			}
+			.scrollbar-none {
+				-ms-overflow-style: none; /* IE and Edge */
+				scrollbar-width: none; /* Firefox */
+			}
+
+			/* Custom animations */
+			@keyframes pulse-slow {
+				0%,
+				100% {
+					opacity: 0.15;
+				}
+				50% {
+					opacity: 0.3;
+				}
+			}
+			.animate-pulse-slow {
+				animation: pulse-slow 8s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+			}
+
+			@keyframes slide-in {
+				from { transform: translateY(1rem); opacity: 0; }
+				to { transform: translateY(0); opacity: 1; }
+			}
+			.animate-slide-in {
+				animation: slide-in 0.25s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+			}
+
+			@keyframes shimmer {
+				0% {
+					background-position: -200% 0;
+				}
+				100% {
+					background-position: 200% 0;
+				}
+			}
+			.animate-shimmer {
+				background: linear-gradient(
+					90deg,
+					rgba(255, 255, 255, 0.02) 25%,
+					rgba(255, 255, 255, 0.07) 50%,
+					rgba(255, 255, 255, 0.02) 75%
+				);
+				background-size: 200% 100%;
+				animation: shimmer 1.6s infinite linear;
+			}
+
+			html {
+				scroll-behavior: smooth;
+			}
+
+			body {
+				margin: 0;
+				padding: 0;
+			}
+		</style>
+	</head>
+	<body
+		class="bg-slate-950 text-slate-100 overflow-x-hidden selection:bg-cyan-500/30 selection:text-cyan-200"
+	>
+		<slot />
+	</body>
+</html>
