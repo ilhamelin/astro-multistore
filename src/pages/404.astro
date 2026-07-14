@@ -1,0 +1,60 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="404 - Página No Encontrada">
+  <div class="min-h-screen bg-slate-950 text-slate-100 flex flex-col items-center justify-center p-6 text-center overflow-hidden relative">
+    {/* Background Grid decoration */}
+    <div class="absolute inset-0 bg-[linear-gradient(to_right,#0f172a_1px,transparent_1px),linear-gradient(to_bottom,#0f172a_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_50%,#000_70%,transparent_100%)] opacity-40 z-0"></div>
+
+    <div class="relative z-10 flex flex-col items-center max-w-lg gap-6">
+      {/* 404 Bouncing SVG Basket wrapper */}
+      <div id="basket-box" class="w-32 h-32 rounded-full bg-slate-900 border border-slate-800 flex items-center justify-center text-cyan-500 shadow-xl shadow-cyan-950/20 opacity-0">
+        <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="8" cy="21" r="1"/>
+          <circle cx="19" cy="21" r="1"/>
+          <path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"/>
+        </svg>
+      </div>
+
+      <div class="flex flex-col gap-2">
+        <h1 class="text-7xl font-extrabold tracking-widest text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-600 font-mono">
+          404
+        </h1>
+        <h2 class="text-xl font-bold uppercase tracking-wide text-slate-200">
+          ¿Te has perdido en el catálogo?
+        </h2>
+        <p class="text-xs text-slate-400 max-w-sm leading-relaxed">
+          La página o el producto que estás buscando no existe, ha cambiado de nicho o ha sido descatalogado por nuestros administradores.
+        </p>
+      </div>
+
+      <a 
+        href="/astro-multistore/" 
+        class="inline-flex items-center gap-2.5 px-6 py-3.5 text-xs font-bold uppercase tracking-widest bg-cyan-500 hover:bg-cyan-400 text-slate-950 transition-all rounded-full shadow-lg shadow-cyan-500/20 active:scale-95 cursor-pointer mt-4"
+      >
+        <span>Volver a la Tienda</span>
+      </a>
+    </div>
+  </div>
+
+  <script>
+    import gsap from 'gsap';
+    
+    // Smooth bouncing entry for the 404 box
+    gsap.fromTo("#basket-box",
+      { scale: 0.3, rotation: -45, y: -100, opacity: 0 },
+      { scale: 1, rotation: 0, y: 0, opacity: 1, duration: 1.2, ease: "bounce.out" }
+    );
+    
+    // Subtle float animation
+    gsap.to("#basket-box", {
+      y: -8,
+      duration: 1.8,
+      ease: "power1.inOut",
+      yoyo: true,
+      repeat: -1,
+      delay: 1.2
+    });
+  </script>
+</Layout>

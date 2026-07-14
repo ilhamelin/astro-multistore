@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import gsap from 'gsap';
 import { useStore } from '../../context/StoreContext';
 import { X, Trash2, Heart, ShoppingBag } from 'lucide-react';
 
@@ -17,6 +18,26 @@ export default function WishlistDrawer() {
     language
   } = useStore();
 
+  useEffect(() => {
+    if (!isWishlistOpen) return;
+
+    const ctx = gsap.context(() => {
+      // 1. Animate header elements
+      gsap.fromTo(".wishlist-header-anim", 
+        { opacity: 0, x: 20 }, 
+        { opacity: 1, x: 0, duration: 0.4, ease: "power2.out" }
+      );
+      
+      // 2. Stagger animate wishlist items
+      gsap.fromTo(".wishlist-item-anim",
+        { opacity: 0, x: 30, scale: 0.95 },
+        { opacity: 1, x: 0, scale: 1, duration: 0.45, stagger: 0.05, ease: "power2.out", delay: 0.1 }
+      );
+    });
+
+    return () => ctx.revert();
+  }, [isWishlistOpen]);
+
   if (!isWishlistOpen) return null;
 
   const favoriteProducts = products.filter((p) => wishlist.includes(p.id));
@@ -33,7 +54,7 @@ export default function WishlistDrawer() {
         <div className={`w-screen max-w-md border-l flex flex-col justify-between shadow-2xl transition-all duration-300 ${currentTheme.colors.cardBg}`}>
           
           {/* Header */}
-          <div className="p-6 border-b border-slate-500/10 flex items-center justify-between">
+          <div className="p-6 border-b border-slate-500/10 flex items-center justify-between wishlist-header-anim opacity-0">
             <div className="flex items-center gap-2">
               <Heart className="h-5 w-5 text-red-500 fill-red-500" />
               <h2 className={`text-lg font-bold ${currentTheme.fontHeading}`}>{t('wishlist_title')}</h2>
@@ -72,7 +93,7 @@ export default function WishlistDrawer() {
                 {favoriteProducts.map((product) => (
                   <div 
                     key={product.id} 
-                    className="flex gap-4 p-3 rounded-xl bg-slate-500/5 border border-slate-500/10 hover:border-slate-500/20 transition-all"
+                    className="flex gap-4 p-3 rounded-xl bg-slate-500/5 border border-slate-500/10 hover:border-slate-500/20 transition-all wishlist-item-anim opacity-0"
                   >
                     {/* Image */}
                     <div className="h-20 w-20 shrink-0 overflow-hidden rounded-lg bg-slate-900/10 dark:bg-white/5">
