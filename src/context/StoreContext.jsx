@@ -569,6 +569,20 @@ export const StoreProvider = ({ children }) => {
     }
   };
 
+  const enterDemoAdminMode = () => {
+    const demoAdmin = {
+      id: 'demo-admin-id',
+      name: 'Admin Demo',
+      email: 'admin@demo.com',
+      role: 'admin'
+    };
+    setCurrentUser(demoAdmin);
+    setIsAdminMode(true);
+    saveLocalStorage('currentUser', demoAdmin);
+    saveLocalStorage('isAdminMode', true);
+    showToast(language === 'es' ? '¡Sesión de Administrador Demo iniciada!' : 'Demo Admin session started!', 'success');
+  };
+
   const updateUserProfile = async (profileUpdates) => {
     if (!currentUser) return { success: false, error: 'Usuario no autenticado' };
 
@@ -1007,7 +1021,8 @@ export const StoreProvider = ({ children }) => {
         promoBarText,
         setPromoBarText,
         promoBarColor,
-        setPromoBarColor
+        setPromoBarColor,
+        enterDemoAdminMode
       }}
     >
       {children}

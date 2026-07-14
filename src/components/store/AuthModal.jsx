@@ -3,7 +3,7 @@ import { useStore } from '../../context/StoreContext';
 import { X, Mail, Lock, User, ShieldAlert, KeyRound, Eye, EyeOff, CheckCircle } from 'lucide-react';
 
 export default function AuthModal() {
-  const { currentTheme, isAuthOpen, setIsAuthOpen, login, register } = useStore();
+  const { currentTheme, isAuthOpen, setIsAuthOpen, login, register, enterDemoAdminMode } = useStore();
   const [tab, setTab] = useState('login'); // 'login' | 'register'
   
   // Form states
@@ -250,6 +250,21 @@ export default function AuthModal() {
           >
             {tab === 'login' ? 'Acceder' : 'Registrarse'}
           </button>
+
+          {/* Quick Demo Access Button */}
+          {tab === 'login' && (
+            <button
+              type="button"
+              onClick={() => {
+                enterDemoAdminMode();
+                handleClose();
+              }}
+              className="w-full py-2.5 px-4 border border-cyan-500/30 hover:border-cyan-500 text-cyan-400 hover:text-cyan-300 text-[10px] font-bold uppercase tracking-widest rounded-lg bg-cyan-950/10 hover:bg-cyan-950/25 transition-all cursor-pointer flex items-center justify-center gap-2 mt-1"
+            >
+              <ShieldAlert className="h-3.5 w-3.5" />
+              <span>Acceder como Administrador Demo</span>
+            </button>
+          )}
 
           {/* Cheat Sheet helper block for easy testing */}
           {tab === 'login' && (
